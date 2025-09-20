@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hamburger</title>
+    <g id="Page-1-Copy-2" stroke="none" stroke-width="1" fill="#5f9ef8" fill-rule="evenodd">
+        <g id="hamburger" fill-rule="nonzero">
+            <polygon id="Path-Copy" transform="translate(400, 145) rotate(90) translate(-400, -145)" points="425 -255 425 545 375 545 375 -255"></polygon>
+            <polygon id="Path-Copy-2" transform="translate(400, 655) rotate(90) translate(-400, -655)" points="425 255 425 1055 375 1055 375 255"></polygon>
+            <polygon id="Path-Copy-3" transform="translate(400, 395) rotate(90) translate(-400, -395)" points="425 -5 425 795 375 795 375 -5"></polygon>
+        </g>
+    </g>
+</svg>
