@@ -1,18 +1,16 @@
-/* Подключение локального шрифта Unbounded */
 @font-face {
   font-family: 'Unbounded';
-  src: url('./fonts/Unbounded-Variable.woff2') format('woff2');
+  src: url('/fonts/Unbounded-Variable.woff2') format('woff2');
   font-weight: 200 900;
   font-display: swap;
 }
 
-/* Подключение локальных шрифтов Font Awesome */
 @font-face {
   font-family: 'Font Awesome 6 Brands';
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url('./fonts/fa-brands-400.woff2') format('woff2');
+  src: url('/fonts/fa-brands-400.woff2') format('woff2');
 }
 
 @font-face {
@@ -20,7 +18,7 @@
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url('./fonts/fa-solid-900.woff2') format('woff2');
+  src: url('/fonts/fa-solid-900.woff2') format('woff2');
 }
 
 .fa,
@@ -1050,6 +1048,11 @@ a.service-card:hover {
   text-decoration: none;
 }
 
+/* Ссылки в контактах */
+.contact-content .contact-card.social a {
+  white-space: nowrap;
+}
+
 .privacy-policy a:hover {
   color: var(--color-accent-hover);
   text-decoration: underline;
@@ -1084,6 +1087,10 @@ a.service-card:hover {
   border-radius: var(--border-radius-large);
   border: 1px solid var(--color-secondary);
   margin-bottom: var(--spacing-xl);
+}
+
+.podcast-card:last-child {
+  margin-bottom: 0;
 }
 
 .podcast-top {
@@ -1213,6 +1220,14 @@ a.service-card:hover {
 
 .contact-card.social a:last-child {
   margin-bottom: 0;
+}
+
+.contact-card.social a:last-child {
+  margin-bottom: 0;
+}
+
+.contact-card.social p {
+  line-height: 1.6;
 }
 
 .contact-card.social a:hover {

@@ -54,7 +54,7 @@ function showCopyNotification(message, cardElement) {
     notification.style.position = 'absolute';
 notification.style.backgroundColor = 'var(--color-primary)';
     notification.style.border = '1px solid var(--color-border)';
-    notification.style.color = 'var(--color-accent)';
+    notification.style.color = 'var(--color-text-secondary)';
     notification.style.padding = '8px 16px';
     notification.style.borderRadius = 'var(--border-radius-medium)';
     notification.style.zIndex = '1000';
@@ -64,20 +64,23 @@ notification.style.backgroundColor = 'var(--color-primary)';
     notification.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
     notification.style.textAlign = 'center';
     
-    // Позиционируем уведомление по центру под карточкой
+// Позиционируем уведомление по центру под карточкой
     const cardRect = cardElement.getBoundingClientRect();
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     
-    // Добавляем временную ноду в DOM для вычисления ширины
+    // Добавляем временную ноду в DOM для вычисления ширины и высоты
     document.body.appendChild(notification);
     const notificationWidth = notification.offsetWidth;
+    const notificationHeight = notification.offsetHeight;
     document.body.removeChild(notification);
     
     // Вычисляем позицию для центрирования уведомления под карточкой
-    const leftPosition = cardRect.left + scrollLeft + (cardRect.width / 2) - (notificationWidth / 2);
+    const leftPosition = cardRect.left + (cardRect.width / 2) - (notificationWidth / 2);
     
-    notification.style.top = (cardRect.bottom + scrollTop + 15) + 'px';
+    // Позиционируем уведомление так, чтобы его середина находилась на уровне нижнего края карточки
+    // Учитываем различия между браузерами
+    const topPosition = cardRect.bottom + scrollTop - (notificationHeight / 2);
+    notification.style.top = topPosition + 'px';
     notification.style.left = leftPosition + 'px';
     
     // Добавляем уведомление к body
