@@ -1467,10 +1467,6 @@ h1 {
     font-size: var(--font-size-xl);
   }
 
-  .section-title {
-    font-size: var(--font-size-xl);
-  }
-
   .service-card {
     padding: var(--spacing-lg);
   }
