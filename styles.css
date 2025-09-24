@@ -873,7 +873,7 @@ a.service-card:hover {
 .specproject-title {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-md);
-  color: var(--color-accent);
+  color: var(--color-text);
   font-weight: 700;
 }
 
@@ -903,7 +903,7 @@ a.service-card:hover {
 .specproject-section h3 {
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-md);
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .specproject-section ul {
@@ -924,7 +924,7 @@ a.service-card:hover {
 
 .specproject-section li:before {
   content: "•";
-  color: var(--color-accent);
+  color: var(--color-text);
   position: absolute;
   left: 0;
   font-size: var(--font-size-lg);
