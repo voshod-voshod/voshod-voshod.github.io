@@ -465,7 +465,7 @@ a:active {
 .about-subtitle {
   font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-lg);
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .features-list {
@@ -485,7 +485,7 @@ a:active {
 
 .features-list li:before {
   content: "•";
-  color: var(--color-accent);
+  color: var(--color-text);
   position: absolute;
   left: 0;
   font-size: var(--font-size-lg);
@@ -498,17 +498,17 @@ a:active {
 
 /* Ссылки на странице "О нас" */
 .about-content a {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration: none;
 }
 
 .about-content a:hover {
-  color: var(--color-accent-hover);
+  color: var(--color-text-secondary);
   text-decoration: underline;
 }
 
 .about-content a:visited {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .section-title {
