@@ -498,17 +498,17 @@ a:active {
 
 /* Ссылки на странице "О нас" */
 .about-content a {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
 .about-content a:hover {
-  color: var(--color-text-secondary);
+  color: var(--color-accent-hover);
   text-decoration: underline;
 }
 
 .about-content a:visited {
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .section-title {
