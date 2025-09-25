@@ -136,13 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
             
             try {
                 // Отправляем данные через fetch API
-                // TODO: Замените 'YOUR_API_KEY' на ваш реальный API ключ
-                // TODO: Замените 'YOUR_ENDPOINT' на ваш реальный endpoint
-                const response = await fetch('https://api.submitjson.com/v1/submit/L8IlbpOPb', {
+                const response = await fetch('https://api.submitjson.com/v1/submit/zdeuDa3LS', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-API-Key': 'sjk_d1cc9b2a924248189bf02775d58ca4fd'
+                        'X-API-Key': 'sjk_7fe38780de5547449a3cf4b6a24f6a75'
                     },
                     body: JSON.stringify({ data: data })
                 });
