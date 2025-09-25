@@ -92,7 +92,7 @@
                             <p>Готовы ответить на все ваши вопросы. Оставьте заявку, и мы свяжемся с вами в ближайшее время.</p>
                         </div>
                     </div>
-                    <form method="POST" action="https://airform.io/voshod.vc.voshod@gmail.com">
+<form id="contact-form" method="POST">
                         <div class="form-group">
                             <input placeholder="Ваше имя" type="text" id="name" name="name" required>
                         </div>
@@ -103,6 +103,7 @@
                             <textarea placeholder="Расскажите о задаче" id="message" name="message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="contact-button">Отправить сообщение</button>
+                        <div id="form-message" class="form-message" style="display: none; margin-top: 16px; padding: 12px; border-radius: 8px; text-align: center;"></div>
                     </form>
                 </div>
             </div>

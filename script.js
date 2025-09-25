@@ -112,3 +112,66 @@ document.querySelectorAll('.copy-icon').forEach(icon => {
     });
 });
 
+// Обработчик формы контактов
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Получаем данные формы
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Показываем индикатор загрузки
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Отправка...';
+            submitButton.disabled = true;
+            
+            // Скрываем предыдущие сообщения
+            formMessage.style.display = 'none';
+            
+            try {
+                // Отправляем данные через fetch API
+                // TODO: Замените 'YOUR_API_KEY' на ваш реальный API ключ
+                // TODO: Замените 'YOUR_ENDPOINT' на ваш реальный endpoint
+                const response = await fetch('https://api.submitjson.com/v1/submit/L8IlbpOPb', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-API-Key': 'sjk_d1cc9b2a924248189bf02775d58ca4fd'
+                    },
+                    body: JSON.stringify({ data: data })
+                });
+                
+                if (response.ok) {
+                    // Успешная отправка
+                    formMessage.textContent = 'Сообщение успешно отправлено!';
+                    formMessage.style.backgroundColor = 'rgba(95, 158, 248, 0.2)';
+                    formMessage.style.color = 'var(--color-text)';
+                    formMessage.style.display = 'block';
+                    contactForm.reset(); // Очищаем форму
+                } else {
+                    // Ошибка отправки
+                    const errorText = await response.text();
+                    throw new Error(`Ошибка сервера: ${response.status} - ${errorText}`);
+                }
+            } catch (error) {
+                // Ошибка сети или другая ошибка
+                formMessage.textContent = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
+                formMessage.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+                formMessage.style.color = 'var(--color-text)';
+                formMessage.style.display = 'block';
+                console.error('Ошибка при отправке формы:', error);
+            } finally {
+                // Восстанавливаем кнопку
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+});
+
