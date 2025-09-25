@@ -833,11 +833,21 @@ a.service-card:hover {
   resize: vertical;
 }
 
-.contact-content .contact-button {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  display: block;
+/* Privacy note and form message styles */
+.contact-content p.privacy-note {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+}
+
+.form-message {
+  display: none;
+  margin-top: 24px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
 }
 
 /* Стили страницы спецпроектов */
