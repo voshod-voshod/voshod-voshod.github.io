@@ -150,7 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (response.ok) {
                     // Успешная отправка
                     formMessage.textContent = 'Сообщение успешно отправлено!';
-                    formMessage.style.backgroundColor = 'rgba(95, 158, 248, 0.2)';
+                    formMessage.style.backgroundColor = 'var(--color-primary)';
+                    formMessage.style.border = '1px solid var(--color-secondary)';
                     formMessage.style.color = 'var(--color-text)';
                     formMessage.style.display = 'block';
                     contactForm.reset(); // Очищаем форму
@@ -160,9 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     throw new Error(`Ошибка сервера: ${response.status} - ${errorText}`);
                 }
             } catch (error) {
-                // Ошибка сети или другая ошибка
+// Ошибка сети или другая ошибка
                 formMessage.textContent = 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.';
-                formMessage.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+                formMessage.style.backgroundColor = 'var(--color-primary)';
+                formMessage.style.border = '1px solid var(--color-secondary)';
                 formMessage.style.color = 'var(--color-text)';
                 formMessage.style.display = 'block';
                 console.error('Ошибка при отправке формы:', error);
