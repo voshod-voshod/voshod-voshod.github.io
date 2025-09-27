@@ -1397,6 +1397,10 @@ h1 {
     width: 120px;
     height: 120px;
   }
+
+  h1 {
+    font-size: var(--font-size-xxl) !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1414,6 +1418,10 @@ h1 {
 
   .contact-content .section-title {
     font-size: var(--font-size-xl);
+  }
+
+  h1 {
+    font-size: var(--font-size-xxl) !important;
   }
 
   .contact-content .about-subtitle {
@@ -1554,5 +1562,9 @@ h1 {
 @media (max-width: 400px) {
   .contact-card p {
     font-size: var(--font-size-sm);
+  }
+
+  h1 {
+    font-size: var(--font-size-xl) !important;
   }
 }
