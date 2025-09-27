@@ -850,6 +850,17 @@ a.service-card:hover {
   text-align: center;
 }
 
+/* Стили для honeypot-поля */
+#website {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
 /* Стили страницы спецпроектов */
 .specprojects-content {
   padding: 160px 0 100px;

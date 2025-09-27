@@ -120,16 +120,31 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Получаем данные формы
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
+
             // Показываем индикатор загрузки
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.textContent;
             submitButton.textContent = 'Отправка...';
             submitButton.disabled = true;
+
+            // Получаем данные формы
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            // Защита от спама: если honeypot поле заполнено, блокируем отправку
+            if (data.website) {
+                formMessage.textContent = 'Обнаружен спам! Форма заблокирована.';
+                formMessage.style.backgroundColor = 'var(--color-primary)';
+                formMessage.style.border = '1px solid var(--color-secondary)';
+                formMessage.style.color = 'var(--color-text)';
+                formMessage.style.display = 'block';
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                return;
+            }
+
+            // Удаляем honeypot поле перед отправкой
+            delete data.website;
             
             // Скрываем предыдущие сообщения
             formMessage.style.display = 'none';
