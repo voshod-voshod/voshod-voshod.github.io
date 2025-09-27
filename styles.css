@@ -116,6 +116,13 @@
   overflow-wrap: break-word;
 }
 
+/* Универсальные стили для изображений */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 html {
   height: 100%;
   background-color: var(--color-primary);
@@ -1515,6 +1522,15 @@ h1 {
   .form-group textarea {
     padding: var(--spacing-sm);
     font-size: var(--font-size-sm);
+  }
+
+  /* Увеличенные отступы для социальных иконок на маленьких экранах */
+  .social-links {
+    gap: var(--spacing-xl);
+  }
+
+  .nav-item.social-icons {
+    gap: var(--spacing-xl);
   }
 }
 
